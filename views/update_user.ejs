@@ -1,4 +1,4 @@
-<%- include('include/_header')%>
+<%- include("include/_header")%>
 
 <main id="site-main">
     <div class="container">
@@ -15,32 +15,32 @@
             <div class="new_user">
                 <div class="form-group">
                     <label for="name" class="text-light">Name</label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text" name="" id="" placeholder="Rajendrakumar">
+                    <input type="hidden" name="id" value="<%= user._id%>">
+                    <input type="text" name="" value="<%= user.name%>" placeholder="Rajendrakumar">
                 </div>
                 <div class="form-group">
                     <label for="Email" class="text-light">Email</label>
-                    <input type="text" name="email" id="" placeholder="rk123@example.com">
+                    <input type="text" name="email" value="<%= user.email%>" placeholder="rk123@example.com">
                 </div>
                 <div class="form-group">
                     <label for="gender" class="text-light">Gender</label>
                     <div class="radio inline">
-                        <input type="radio" id="radio-2" name="gender" value="Male">
+                        <input type="radio" id="radio-2" name="gender" value="Male"<%= user.gender == 'Male'?'checked':''%> >
                         <label for="radio-2" class="radio-lable">Male</label>
                     </div>
                     <div class="radio inline">
-                        <input type="radio" id="radio-3" name="gender" value="Female">
+                        <input type="radio" id="radio-3" name="gender" value="Female"<%= user.gender == 'Female'?'checked':''%> >
                         <label for="radio-3" class="radio-lable">Female</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="status" class="text-light">Status</label>
                     <div class="radio inline">
-                        <input type="radio" id="radio-4" name="status" value="Active">
+                        <input type="radio" id="radio-4" name="status" value="Active"<%= user.status == 'Active'?'checked':''%> >
                         <label for="radio-4" class="radio-lable">Active</label>
                     </div>
                     <div class="radio inline">
-                        <input type="radio" id="radio-5" name="status" value="Inactive">
+                        <input type="radio" id="radio-5" name="status" value="Inactive"<%= user.status == 'Inactive'?'checked':''%> >
                         <label for="radio-5" class="radio-lable">Inactive</label>
                     </div>
                 </div>
@@ -53,4 +53,4 @@
     </div>
 </main>
 
-<%- include('include/_footer')%>
+<%- include("include/_footer")%>
